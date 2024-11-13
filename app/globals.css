@@ -2,20 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background-canvas: 246, 246, 244, 1;
+    --radius-full: 100%;
+    --radius-large: 12px;
+    --radius-medium: 8px;
+    --radius-small: 4px;
+
+    /* toggle */
+    /* toggle background */
+
+    /* toggle/background/neutral  */
+    --toggle-background-neutral-default: 9, 30, 66, 0.06;
+    --toggle-background-neutral-hovered: 9, 30, 66, 0.14;
+    --toggle-background-neutral-pressed: 9, 30, 66, 0.31;
+
+    /* toggle/background/neutral/subtle  */
+    --toggle-background-neutral-subtle-default: 255, 255, 255, 0;
+    --toggle-background-neutral-subtle-hovered: 9, 30, 66, 0.06;
+    --toggle-background-neutral-subtle-pressed: 9, 30, 66, 0.14;
+
+    /* toggle/background/disabled  */
+    --toggle-background-disabled: 9, 30, 66, 0.03;
+
+    /* toggle/background/selected/bold  */
+    --toggle-background-selected-bold-default: 48, 56, 74, 1;
+    --toggle-background-selected-bold-hovered: 75, 81, 96, 1;
+    --toggle-background-selected-bold-pressed: 91, 98, 111, 1;
+
+    /* toggle/border  */
+    --toggle-border-default: 9, 30, 66, 0.14;
+    --toggle-border-disabled: 9, 30, 66, 0.06;
+    --toggle-border-selected: 48, 56, 74, 1;
+
+    /* toggle/text  */
+    --toggle-text-default: 23, 43, 77, 1;
+    --toggle-text-disabled: 9, 30, 66, 0.31;
+    --toggle-text-inverse: 255, 255, 255, 1;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  body {
+    @apply bg-background-canvas;
+  }
 }
