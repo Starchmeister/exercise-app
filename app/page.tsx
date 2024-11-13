@@ -27,12 +27,14 @@ export default function Home() {
         <div className="flex flex-col gap-4">
           <div className="flex items-center space-x-2">
             <Checkbox
-              id="terms2"
+              id="disable"
               checked={isToggleDisabled}
-              onCheckedChange={setIsToggleDisabled}
+              onCheckedChange={(checked) =>
+                setIsToggleDisabled(checked === true)
+              }
             />
             <label
-              htmlFor="terms2"
+              htmlFor="disable"
               className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
             >
               Disable
@@ -42,7 +44,7 @@ export default function Home() {
             <Checkbox
               id="show-icon"
               checked={showIcon}
-              onCheckedChange={setShowIcon}
+              onCheckedChange={(checked) => setShowIcon(checked === true)}
             />
             <label
               htmlFor="show-icon"
